@@ -1,0 +1,68 @@
+.sidebar{
+    /* background-color: #000;    */
+    height: 100vh;
+    background-color: #79071a;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app_title{
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.admin_profile_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.admin_profile_div > i{
+    font-size: 40px;
+}
+
+.admin_profile_div > p{
+    color: #ddd;
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    /* background-color: #eee; */
+    width: 200px;
+    justify-content: flex-start;
+    padding:10px 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.links:hover{
+    border-left: solid 2px #f7022a;
+}
+
+.links:hover > i{
+    color: #f7022a
+}
+
+.links:hover > h6{
+    color: #f7022a
+}
+
+.links > i{
+    font-size: 16px;
+    margin-right: 10px;
+}
+.links > h6{
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+}
