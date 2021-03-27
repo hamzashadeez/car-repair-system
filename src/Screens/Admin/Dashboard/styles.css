@@ -1,0 +1,42 @@
+.dashboard{
+    background: linear-gradient(to right top, rgba(255,255,255,.7), rgba(255,255,255,.3));
+    width: 1000px;
+    flex: 1;
+    padding: 10px 20px;
+    height: 500px;
+    border-radius: 1.2rem;
+}
+
+.boxContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box{
+    background: linear-gradient(to right top, rgba(255,255,255,.96), rgba(255,255,255,.8));
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 22%;
+    color: black;
+    box-shadow: 1.4px 1.4px 2px #dfdfdf;
+    cursor: pointer;
+}
+
+.box > div{
+    /* background-color: red; */
+    padding: 0;
+    margin: 0;
+}
+
+.box > div > h3{
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.box > p{
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+}
