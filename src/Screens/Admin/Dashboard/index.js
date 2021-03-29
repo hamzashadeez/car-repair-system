@@ -15,7 +15,7 @@ const Box = ({ label, num }) => {
 const DashBoard = () => {
   return (
     <div className="dashboard">
-      <h3 style={{ color: "black" }}>Dashboard</h3>
+      <h3 style={{ color: "black", marginBottom: '2px', fontWeight: '500' }}>Dashboard</h3>
       <div className="boxContainer">
         <Box num={20} label={"Cars in Operation"} />
         <Box num={19} label={"Income Generated"} />

@@ -2,3 +2,12 @@
     display: flex;
     
 }
+
+.screen{
+    background: linear-gradient(to right top, rgba(255,255,255,.7), rgba(255,255,255,.3));
+    width: 1000px;
+    flex: 1;
+    padding: 10px 20px;
+    height: 500px;
+    border-radius: 1.2rem;
+}
