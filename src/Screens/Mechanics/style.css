@@ -1,0 +1,106 @@
+#request_to_join{
+    text-align: right;
+    margin-right: 3rem;
+    color: #79071a;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#request_to_join:hover{
+    opacity: 0.6;
+}
+
+
+.flex__div{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    height: 65vh;
+}
+
+
+.mechanics__list__div{
+    /* background: linear-gradient(to right top, #79071a, #f3163b); */
+    flex: 2;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right top, rgba(255,255,255,.7), rgba(255,255,255,.3));
+}
+
+.mechanics__list__div > div{
+    flex: 1;
+    padding: 10px;
+    background-color: #f3163b;
+    margin: 0 2px;
+}
+
+
+.mechanics_div_profile{
+    flex: 1;
+    padding-top: 10px;
+    margin-left: 2rem;
+    background: linear-gradient(to right top, rgba(255,255,255,.7), rgba(255,255,255,.3));
+}
+
+.mechanics_div_profile > h5{
+    color: #c00625;
+    text-align: center;
+    margin: 0;
+}
+.mechanics_div_profile > div{
+    height: 57vh;
+    /* background-color: blue; */
+    padding: 10px 15px;
+    overflow-y: scroll;
+}
+
+.list_item_mechanics{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 10px;
+    background: linear-gradient(to right top, #79071a, #f3163b);
+    margin-bottom: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.list_item_mechanics:hover{
+    opacity: 0.9;
+}
+
+.dot{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.active{
+    background-color: #5ac404;
+}
+.not_active{
+    background-color: #ec9a02;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(to right top, rgba(236, 99, 99, 0.7), rgba(228, 138, 138, 0.5));
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#f80254
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f80254;
+  }
