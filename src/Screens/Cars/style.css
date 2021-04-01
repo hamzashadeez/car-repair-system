@@ -67,7 +67,7 @@
     height: 60vh;
     overflow-y: scroll;
 }
-.car:hover{opacity: 0.9;}
+.car:hover{opacity: 0.8;}
 .car{
     margin-bottom:10px;
     background: linear-gradient(to right top, rgba(255,255,255,.23), rgba(255,255,255,.18));
@@ -78,4 +78,34 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+}
+
+.img_holder > img{
+    width: 300px;
+    object-fit: contain;
+    margin: 5px;
+}
+
+.img_holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    height: 226px;
+    background: linear-gradient(to right top, rgba(255,255,255,.23), rgba(255,255,255,.18));
+    /* background-color: #79071a; */
+}
+
+.car_data{
+    background-color: #79071a;
+    margin-top: -10px;
+    padding: 10px 20px;
+    height: 200px
+}
+
+.car_data > p{
+    margin: 0;
+    color: #d66d7d;
+    font-size: 16px;
+    letter-spacing: .7px;
 }
