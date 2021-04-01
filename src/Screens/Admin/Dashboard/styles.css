@@ -13,6 +13,10 @@
     justify-content: space-between;
 }
 
+.chart__container{
+    background: linear-gradient(to right top, rgba(255,255,255,.4), rgba(255,255,255,.2));
+}
+
 .box{
     background: linear-gradient(to right top, rgba(255,255,255,.96), rgba(255,255,255,.8));
     border-radius: 5px;
