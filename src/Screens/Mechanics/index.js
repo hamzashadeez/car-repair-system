@@ -20,7 +20,7 @@ const ListItem = ({ data, select }) => {
 function Mechanics() {
   let history = useHistory();
   const [selected, setSelected] = useState({});
-  const imgDP = require('../../Assets/userpic.png')
+  const imgDP = require('../../images/userpic.png')
 
   const select = (data) => {
     setSelected(data);
