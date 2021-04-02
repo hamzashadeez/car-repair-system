@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./style.css";
 import { useHistory } from "react-router-dom";
 //images
-import Car1 from "../../assets/car1.png";
-import Car2 from "../../assets/car2.png";
-import Car3 from "../../assets/car3.png";
-import Car4 from "../../assets/car4.png";
+import Car1 from "../../images/car1.png";
+import Car2 from "../../images/car2.png";
+import Car3 from "../../images/car3.png";
+import Car4 from "../../images/car4.png";
 
 const Car = ({ data, select }) => {
   return (
