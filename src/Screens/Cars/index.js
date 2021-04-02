@@ -1,23 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
-import CarImage from "../../assets/car.jpg";
+import { useHistory } from "react-router-dom";
+//images
 import Car1 from "../../assets/car1.png";
 import Car2 from "../../assets/car2.png";
 import Car3 from "../../assets/car3.png";
 import Car4 from "../../assets/car4.png";
 
 const Car = ({ data, select }) => {
-  return <div className="car" onClick={()=>select(data)}>
+  return (
+    <div className="car" onClick={() => select(data)}>
       {data.name}
       <i class="fas fa-chevron-right"></i>
-      </div>;
+    </div>
+  );
 };
 
 function Cars() {
-const [selected, setSelected] = useState({})
-const select = (data)=>{
-    setSelected(data)
-}
+  let history = useHistory();
+  const [selected, setSelected] = useState({});
+  const select = (data) => {
+    setSelected(data);
+  };
   const data = [
     {
       name: "Corolla",
@@ -71,8 +75,8 @@ const select = (data)=>{
   return (
     <div className="screen">
       <div className="cars_header_div">
-        <button>Add New</button>
-        <h4>Completed (2)</h4>
+        <button onClick={()=>history.push('/cars/new')}>Add New</button>
+        <h4 onClick={()=>history.push('/cars/completed')}>Completed (2)</h4>
       </div>
       <div className=" car__main_div">
         <div className="list_active_cars">
@@ -85,19 +89,22 @@ const select = (data)=>{
         </div>
         <div className="selected_cars">
           <div className="img_holder">
-            <img alt="image" src={selected.picture} />
+            {selected.picture ? <img alt="image" src={selected.picture} /> : ""}
           </div>
-          
-          <div className="car_data">
-            <p>Name: {selected.name}</p>
-            <p>Model: {selected.model}</p>
-            <p>Color: {selected.color}</p>
-            <p>Owner's Name: {selected.owner_name}</p>
-            <p>Owner's Phone: {selected.owner_phone}</p>
-            <p>Date Recieved: {selected.date_recieved}</p>
-            <p>Collection Date: {selected.collection_date}</p>
-            <p>Status: {selected.status}</p>
-          </div>
+          {selected.picture ? (
+            <div className="car_data">
+              <p>Name: {selected.name}</p>
+              <p>Model: {selected.model}</p>
+              <p>Color: {selected.color}</p>
+              <p>Owner's Name: {selected.owner_name}</p>
+              <p>Owner's Phone: {selected.owner_phone}</p>
+              <p>Date Recieved: {selected.date_recieved}</p>
+              <p>Collection Date: {selected.collection_date}</p>
+              <p>Status: {selected.status}</p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

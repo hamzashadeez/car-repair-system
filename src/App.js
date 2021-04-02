@@ -11,6 +11,8 @@ import Schedule from "./Screens/Schedule";
 import Inventory from "./Screens/Inventory";
 import Invoice from "./Screens/Invoice";
 import Logout from "./Screens/Auth/Logout";
+import NewCar from "./Screens/Cars/NewCar";
+import CompletedCars from "./Screens/Cars/CompletedCars";
 //#f7022a
 
 const Main = ()=>{
@@ -31,6 +33,8 @@ const Main = ()=>{
             <Route exact path="/mechanics" component={Mechanics} />
             <Route exact path="/mechanics/requests" component={Requests} />
             <Route exact path="/cars" component={Cars} />
+            <Route exact path="/cars/new" component={NewCar} />
+            <Route exact path="/cars/completed" component={CompletedCars} />
             <Route exact path="/schedule" component={Schedule} />
             <Route exact path="/inventory" component={Inventory} />
             <Route exact path="/invoice" component={Invoice} />
