@@ -1,0 +1,76 @@
+.loginPage{
+    /* background-color: whitesmoke; */
+    /* background: linear-gradient(to right top, #8d091f, #f3163b); */
+    background: linear-gradient(to right top, rgba(255,255,255,.23), rgba(255,255,255,.18));
+    width: 100%;
+    height: 100vh;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginForm{
+    padding: 15px 25px;
+    box-sizing: border-box;
+    background: linear-gradient(to right top, rgba(255,255,255,.73), rgba(255,255,255,.48));
+    min-width: 30%;
+    min-height: 300px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #702b2b;
+}
+
+.loginForm > label{
+    font-size: 15px;
+}
+.loginForm > select{
+    padding: 10px 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #000;
+    font-weight: 500;
+    background: linear-gradient(to right top, rgba(255,255,255,.73), rgba(255,255,255,.58));
+    /* background: linear-gradient(to right top, #c52b45f5, #61101e); */
+}
+.h3_Login{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.login__form_div  > input{
+    padding: 10px 15px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: rgb(14, 1, 1);
+    font-weight: 500;
+    background: linear-gradient(to right top, rgba(255,255,255,.73), rgba(255,255,255,.58));
+}
+
+.login__form_div > label{
+    font-size: 14px;
+}
+
+.btn_login{
+    background-color: #79071a;
+    padding: 8px 18px;
+    margin-top: 10px;
+    border-radius: 3px;
+    color: #eee;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn_login:hover{
+    opacity: 0.8;
+}
