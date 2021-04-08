@@ -58,11 +58,9 @@ function Inventory() {
           }))
         );
       });
-      // console.log(products);
     })();
-
-    // questions.map((d) => console.log(d));
   }, []);
+  
   useEffect(() => {
     (async () => {
       db.collection("categories").onSnapshot((snapshot) => {

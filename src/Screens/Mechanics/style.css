@@ -32,7 +32,9 @@
 .mechanics__list__div > div{
     flex: 1;
     padding: 10px;
-    background-color: #f3163b;
+    color: #79071a;
+    background: linear-gradient(to right top, rgba(255,255,255,.3), rgba(255,255,255,.2));
+    /* background-color: #f3163b; */
     margin: 0 2px;
 }
 
@@ -103,4 +105,29 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #f80254;
+  }
+
+
+  .edit_mech{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .edit_mech > input{
+    padding: 5px 15px;
+    /* width: 200px; */
+    margin-bottom: 5px;
+    margin-top: 3px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    background-color: #d66d7d;
+  }
+  .edit_mech > div{
+      display: flex;
+      margin-top: 5px;
+      align-items: center;
+      justify-content: space-around;
   }

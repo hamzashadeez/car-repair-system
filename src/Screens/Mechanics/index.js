@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
-import { useHistory } from "react-router-dom";
+import NewMech from "./Modal/NewMech";
+import { db } from "../../firebase";
 
 const ListItem = ({ data, select }) => {
   let status = data.status === "active" ? "active" : "not_active";
@@ -18,57 +19,105 @@ const ListItem = ({ data, select }) => {
 };
 
 function Mechanics() {
-  let history = useHistory();
   const [selected, setSelected] = useState({});
-  const imgDP = require('../../images/userpic.png')
+  const [addNewMechModal, setAddNewMechModal] = useState(false);
+  const [mechanics, setMechanics] = useState([]);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [code, setCode] = useState("");
+
+  const hideModal = () => {
+    setAddNewMechModal(false);
+  };
 
   const select = (data) => {
     setSelected(data);
-    console.log(data);
+    setName(selected.name);
+    setEmail(selected.email);
+    setCode(selected.code);
+   
   };
 
-  const mechanics = [
-    {
-      id: 1,
-      name: "Hamza Shadeez",
-      status: "active",
-      email: "hamza@gmail.com",
-    },
-    {
-      id: 2,
-      name: "John Doe",
-      status: "not active",
-      email: "johndoe@gmail.com",
-    },
-    {
-      id: 3,
-      name: "Osman Yasir",
-      status: "active",
-      email: "osman1212@gmail.com",
-    },
-    { id: 4, name: "Amir Zain", status: "active", email: "amirzain@gmail.com" },
-  ];
+  useEffect(() => {
+    (async () => {
+      await db.collection("mechanics")
+        .onSnapshot((snapshot) => {
+          setMechanics(
+            snapshot.docs.map((doc) => ({
+              id: doc.id,
+              data: doc.data(),
+            }))
+          );
+        })
+        
+    })();
+  }, []);
+
+  useEffect(() => {
+    // set value
+    // setName(selected.name);
+    // setEmail(selected?.email);
+    // setCode(selected?.code);
+  }, []);
 
   return (
     <div className="screen">
-      <h5
-        onClick={() => history.push("/mechanics/requests")}
-        id="request_to_join"
+      <button
+        className="btn btn-success ml-4"
+        onClick={() => setAddNewMechModal(true)}
       >
-        Requests(1)
-      </h5>
+        Add a new mechanic
+      </button>
       <div className="flex__div">
+        <NewMech show={addNewMechModal} onHide={hideModal} hide={hideModal} />
         <div className="mechanics__list__div">
-            <div>
-                <img alt='user' src={imgDP}/>
-            </div>
-            <div>configs</div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <h6>Name: {selected.name}</h6>
+            <h6>Email: {selected.email}</h6>
+            <h6>Status: {selected.status?.toUpperCase()}</h6>
+          </div>
+          <div>
+            {/* <form className="edit_mech">
+              <h4>Mechanic Configs</h4>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                placeholder="Enter Name"
+              />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
+                placeholder="Enter Email"
+              />
+              <input
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+                type="number"
+                required
+                placeholder="Enter Code"
+              />
+              <div>
+                <button className="btn btn-success">Update</button>
+                <button className="btn btn-danger">Delete</button>
+              </div>
+            </form> */}
+          </div>
         </div>
         <div className="mechanics_div_profile">
           <h5>List of Mechanics ({mechanics.length})</h5>
           <div>
-            {mechanics.map((d) => (
-              <ListItem key={d.id} data={d} select={select} />
+            {mechanics.map(({ id, data }) => (
+              <ListItem key={id} data={data} select={select} />
             ))}
           </div>
         </div>

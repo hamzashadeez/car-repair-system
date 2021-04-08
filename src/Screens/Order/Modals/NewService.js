@@ -42,7 +42,7 @@ function NewService({hideService, ...props }) {
       <Modal.Body>
         <Form onSubmit={(e)=>submit(e)}>
           <Form.Group controlId="formBasicEmail">
-            <Form.Control value={service} onChange={(e)=>setService(e.target.value)} type="text" placeholder="Enter service name" />
+            <Form.Control required value={service} onChange={(e)=>setService(e.target.value)} type="text" placeholder="Enter service name" />
           </Form.Group>
           <Button type='submit'>Submit</Button>
         </Form>
