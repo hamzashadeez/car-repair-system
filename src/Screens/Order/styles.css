@@ -1,0 +1,85 @@
+
+.order__main_div{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: bisque; */
+    height: 75vh;
+    position: relative;
+}
+
+.main_order{
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 15px
+}
+
+
+.config_order{
+    flex: 1;
+    overflow-y: scroll;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+}
+
+.main_order > form{
+    /* background-color: seashell; */
+    /* max-width: 400px; */
+    flex: 1
+    /* height: 60vh; */
+}
+
+.main_order > form > label{
+    color: #8a3b47;
+    font-size: 15px;
+}
+.main_order > form > select{
+    padding: 10px 15px;
+    width: 100%;
+    margin: 0;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    color: #8a3b47;
+    font-weight: 500;
+    background-color: #d66d7d;
+    /* margin-left: 20px; */
+}
+
+
+.side__order{
+    /* background: skyblue; */
+    flex: 2;
+    padding: 20px
+}
+
+
+
+
+
+
+
+/* List Item */
+.OrderItemList{
+    padding: 3px 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    background: linear-gradient(to right top, rgba(255,255,255,.4), rgba(255,255,255,.3));
+}
+
+.OrderItemList:hover{
+    opacity: 0.8;
+}
+.OrderItemList > h6{
+    font-size: 1rem;
+    margin: 0;
+}
+.OrderItemList > p{
+    margin: 0;
+    font-size: .7rem;
+}
+
+/* End of ListItem */

@@ -20,7 +20,7 @@ function SideBar() {
         </div>
         <div className="links">
         <i class="fas fa-car"></i>
-          <h6 onClick={()=> history.push('/cars')}>Manage Cars</h6>
+          <h6 onClick={()=> history.push('/order')}>Order</h6>
         </div>
         <div className="links">
         <i class="fas fa-cog"></i>
