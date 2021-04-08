@@ -17,6 +17,7 @@ import Login from "./Screens/Auth/Login";
 import NewCar from "./Screens/Cars/NewCar";
 import CompletedCars from "./Screens/Cars/CompletedCars";
 import UserDash from "./Users/Dashboard";
+import Item from './Screens/Inventory/Item'
 
 //#f7022a
 
@@ -44,6 +45,8 @@ const Main = () => {
           <Route exact path="/inventory" component={Inventory} />
           <Route exact path="/invoice" component={Invoice} />
           <Route exact path="/logout" component={Logout} />
+          <Route exact path="/item" component={Item} />
+          
         </Switch>
       </div>
     </div>
