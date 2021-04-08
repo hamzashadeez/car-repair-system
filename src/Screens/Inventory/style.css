@@ -123,3 +123,29 @@
 .head__inv > div > p{
     color: #8a3b47;
 }
+
+
+
+.body__env{
+    /* background-color: whitesmoke; */
+    height: 66vh;
+}
+
+.inv__product{
+    display: flex;
+    align-items: center;
+    background-color: #d66d7d;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.inv__product:hover{
+    background-color: #e05d71;
+}
+
+.inv__product > p{
+    margin: 0;
+    flex: 1
+}
