@@ -84,10 +84,10 @@ function Item(props) {
               Go back
             </Link>
           </div>
-          <h3>Product Name: {name}</h3>
-          <h3>Selling Price: {price}</h3>
-          <h3>Stock Remain: {stock}</h3>
-          <h3>Category: {category}</h3>
+          <h3>Product Name: <span style={{color: '#8a3b47'}}>{name}</span></h3>
+          <h3>Selling Price: <span style={{color: '#8a3b47'}}>{price}</span></h3>
+          <h3>Stock Remain: <span style={{color: '#8a3b47'}}>{stock}</span></h3>
+          <h3>Category: <span style={{color: '#8a3b47'}}>{category}</span></h3>
           {/* <h3>product ID: {id}</h3> */}
         </div>
         <div className="item_configs">

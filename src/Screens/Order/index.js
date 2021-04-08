@@ -43,6 +43,12 @@ const Order = () => {
               <option value="service">Service</option>
               <option value="product">Products</option>
             </select>
+            <hr style={{border: "2px solid #8a3b47"}}></hr>
+
+            <div className="configs_div">
+                <button type='button' style={{background: 'seagreen'}}>Add New Customer</button>
+                <button type='button' style={{background: 'dodgerblue'}}>Add New Service</button>
+            </div>
           </form>
           {/* side */}
           <div className="side__order">
@@ -56,6 +62,7 @@ const Order = () => {
               marginBottom: "10px",
               fontSize: "1rem",
               fontWeight: "500",
+              color: "#8a3b47"
             }}
           >
             Orders
