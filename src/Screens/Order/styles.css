@@ -96,7 +96,7 @@
     padding: 3px 10px;
     margin-bottom: 5px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
     background: linear-gradient(to right top, rgba(255,255,255,.4), rgba(255,255,255,.3));
 }
 
@@ -106,11 +106,12 @@
 .OrderItemList > h6{
     font-size: 1rem;
     margin: 0;
+    color: #8a3b47;
 }
 .OrderItemList > p{
     margin: 0;
     font-size: .7rem;
-    color: #eee
+    color: #8a3b47;
 }
 
 /* End of ListItem */
@@ -147,7 +148,7 @@
     outline: none;
     border: none;
     margin-bottom: 10px;
-    color: #8a3b47;
+    color: #eee;
     font-weight: 500;
     background-color: #d66d7d;
     /* margin-left: 20px; */
@@ -161,8 +162,13 @@
     outline: none;
     border: none;
     margin-bottom: 10px;
-    color: #8a3b47;
+    color: #eee;
     font-weight: 500;
     background-color: #d66d7d;
     /* margin-left: 20px; */
+}
+
+.labelStyle{
+    color: #8a3b47;
+    font-size: 15px;
 }

@@ -6,6 +6,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  color: #fff;
+  color: #fff !important;
   background: linear-gradient(to right top, #79071a, #f3163b);
 }

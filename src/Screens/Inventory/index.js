@@ -127,7 +127,6 @@ function Inventory() {
                 onChange={(e) => setNewCategory(e.target.value)}
                 required
                 placeholder="new category"
-                required
               />
               <button className="submit__btn" type="submit">
                 Submit
