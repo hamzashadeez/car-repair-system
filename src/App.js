@@ -25,6 +25,7 @@ import Header from './Users/Header'
 import Profile from './Users/Profile'
 import Assignment from './Users/Assignment'
 import LogOutMech from './Users/LogOut'
+import Chat from './Users/Assignment/Chat'
 //#f7022a
 
 const Main = () => {
@@ -68,6 +69,7 @@ const Others = () => {
         <Route exact path="/" component={UserDash} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/assignment" component={Assignment} />
+        <Route exact path="/chat" component={Chat} />
         <Route exact path="/logout" component={LogOutMech} />
       </Switch>
     </div>

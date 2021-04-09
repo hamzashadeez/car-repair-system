@@ -2,8 +2,16 @@ import React, { useState, useEffect, useContext } from "react";
 import "./style.css";
 import { db } from "../../firebase";
 import { UserContext } from "../../UserContext";
+import {useHistory} from 'react-router-dom'
 
-const Task = ({ data }) => {
+const Task = ({ data, id }) => {
+    let history = useHistory();
+    const chat = ()=>{
+        history.push({
+            pathname:'/chat',
+            state: { data, id },
+        })
+    }
   return (
     <div className="task">
       <p>
@@ -19,7 +27,7 @@ const Task = ({ data }) => {
         Date Submitted: <span> </span>
       </p>
 
-      <button className="btn btnChange mt-2">Contact Admin</button>
+      <button className="btn btnChange mt-2" onClick={()=>chat()}>Contact Admin</button>
     </div>
   );
 };
@@ -45,7 +53,7 @@ function Assignment() {
     <div className="screenn">
       <div className="assignment_Main">
         {assigns.map(({ id, data }) => (
-          <Task key={id} data={data} />
+          <Task key={id} id={id} data={data} />
         ))}
       </div>
     </div>

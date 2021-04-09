@@ -30,3 +30,60 @@
     color: #8a3b47;
     margin-bottom: 2px;
 }
+
+.Chat_main{
+    background-color: whitesmoke;
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-around;
+    height: 90vh;
+}
+
+.Chat_side{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+}
+.Chat_side > h4{
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #8a3b47;
+}
+
+.Chat_container{
+    background-color: white;
+    border-radius: 3px;
+    color: #333;
+    height: 83vh;
+    width: 400px;
+}
+.Chat_container > div{
+    height: calc(100% - 40px);
+    padding: 10px;
+    overflow-y: scroll;
+}
+.Chat_container > div > p{
+   margin-bottom: 2px;
+   font-size: 15px;
+}
+.Chat_container > div > p > span{
+    color: #8a3b47;
+ }
+.chat_form_div{
+    background-color: white;
+    height: 40px;
+    position: relative;
+    border-top: 1px solid whitesmoke;
+}
+.chat_form_div > input{
+    height: 40px;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 3px 10px;
+    color: #333;
+    font-size: 14px;
+}
