@@ -2,3 +2,46 @@
     background-color: whitesmoke;
     height: 90vh;
 }
+
+.dash{
+    height: 90vh;
+    padding-top: 20px;
+}
+
+.welcome{
+    font-size: 1.2rem;
+    color: #8a3b47;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-bottom: -10px;
+}
+.nameMech{
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #8a3b47;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.box_container{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+
+.box{
+    padding: 15px;
+    background-color: white;
+}
+
+.box h4{
+    font-size: 2rem;
+}
+
+.box p{
+    color: #8a3b47;
+    font-weight: 600;
+}
