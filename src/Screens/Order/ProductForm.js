@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { db } from "../../firebase";
+import moment from "moment";
 import { v4 as uuidv4 } from "uuid";
 
 function ProductForm() {
@@ -20,14 +21,13 @@ function ProductForm() {
         stock = p.data.stock;
       }
     })
-    var d = new Date();
     await db
       .collection("orders")
       .doc(uuidv4())
       .set({
         quantity,
         customer,
-        date: d,
+        date: moment().format("DD/MM/YYYY"),
         type: 'Product',
         cost: price * quantity,
         name:product,

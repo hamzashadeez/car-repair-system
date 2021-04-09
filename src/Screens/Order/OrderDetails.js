@@ -1,18 +1,67 @@
+import moment from "moment";
 import React, { useState, useEffect } from "react";
 import "./order.css";
-import {db} from '../../firebase'
+import firebase from "firebase";
+import { db } from "../../firebase";
+import Form from "react-bootstrap/Form";
 
 function OrderDetails(props) {
   const [mechanics, setMechanics] = useState([]);
-  const [mechanic, setMechanic] = useState('');
+  const [mechanic, setMechanic] = useState("");
   const { data, id } = (props.location && props.location.state) || {};
   const { name, cost, quantity, type, carName, model, date } = data || {};
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
 
-  const assign = async ()=>{
-      if(mechanics !== "Not selected"){
-        console.log(mechanic)
-      }
-  }
+  useEffect(() => {
+    let unsubscribe;
+    if (id) {
+      unsubscribe = db
+        .collection("orders")
+        .doc(id)
+        .collection("comment")
+        .orderBy("timestamp", "asc")
+        .onSnapshot((snapshot) => {
+          setComments(snapshot.docs.map((doc) => doc.data()));
+        });
+    }
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const submitComment = async (e) => {
+    e.preventDefault();
+    await db.collection("orders").doc(id).collection("comment").add({
+      text: comment,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      username: "Admin",
+    });
+    setComment("");
+  };
+
+  const assign = async () => {
+    if (mechanics !== "Not selected") {
+      await db
+        .collection("mechanics")
+        .doc(mechanic)
+        .update({
+          assignments: firebase.firestore.FieldValue.arrayUnion({
+            data,
+            id,
+            date: moment().format("DD/MM/YYYY"),
+          }),
+        })
+        .then(() => {
+          alert(`Successful`);
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("something went wrong");
+        });
+    }
+  };
 
   useEffect(() => {
     (async () => {
@@ -70,19 +119,47 @@ function OrderDetails(props) {
             <div className="assign_tasks">
               <h4>Assign Work to a mechanic</h4>
               <label>Choose a mechanic</label>
-              <select onChange={(e)=>setMechanic(e.target.value)}>
+              <select onChange={(e) => setMechanic(e.target.value)}>
                 <option>Not selected</option>
                 {mechanics.map(({ id, data }) => (
-                  <option value={id} key={id}>{data.name}</option>
+                  <option value={id} key={id}>
+                    {data.name}
+                  </option>
                 ))}
               </select>
-              <button className='btn btn-success ' onClick={()=>assign()}>Submit</button>
+              <button className="btn btn-success" onClick={() => assign()}>
+                Submit
+              </button>
             </div>
           ) : (
             ""
           )}
         </div>
-        <div className="smDiv">sm</div>
+        <div className="smDiv">
+          {type === "service" ? (
+            <div>
+              <div className="message_div">
+                <div className="comments">
+                  {comments.map((comment) => (
+                    <p key={comment.text}>
+                      <strong>{comment.username}</strong> <span>{comment.text}</span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <form onSubmit={(e) => submitComment(e)} className="message_form">
+                <input
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  placeholder="type your message"
+                  className="messageInput"
+                />
+              </form>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

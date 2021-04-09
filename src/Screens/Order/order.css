@@ -1,45 +1,111 @@
-.orderDetail_main{
-    height: 73vh;
-    display: flex;
+.orderDetail_main {
+  height: 73vh;
+  display: flex;
 }
 
-.bigDiv{
-    flex: 3
-}
-.smDiv{
-    flex: 1
+.bigDiv {
+  flex: 3;
 }
 
-.assign_tasks{
+/* Chat */
+.smDiv {
+  flex: 1;
+  background: linear-gradient(
+    to right top,
+    rgba(255, 255, 255, 0.23),
+    rgba(255, 255, 255, 0.18)
+  );
+  height: 71vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.smDiv > div {
+  width: 100%;
+  height: 70vh;
+}
+
+.message_div {
     background: linear-gradient(
+        to right top,
+        rgba(255, 255, 255, 0.23),
+        rgba(255, 255, 255, 0.18)
+      );
+  width: 100%;
+  height: 65vh;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.message_form {
+    background: linear-gradient(
+        to right top,
+        rgba(255, 255, 255, 0.53),
+        rgba(255, 255, 255, 0.48)
+      );
+  width: 100%;
+  height: 5vh;
+  align-items: center;
+  display: flex;
+  /* padding: 2px 5px */
+}
+.comments {
+  padding: 10px;
+}
+.comments > p {
+  font-size: small;
+  color: #222;
+  margin-bottom: 0;
+}
+.comments > p > span{
+    color: #8a3b47
+}
+/* chat */
+
+.messageInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #333;
+  font-size: 12px;
+  background-color: transparent;
+  padding: 2px 7px;
+}
+.assign_tasks {
+  background: linear-gradient(
     to right top,
     rgba(255, 255, 255, 0.23),
     rgba(255, 255, 255, 0.18)
   );
   display: flex;
   flex-direction: column;
-    padding: 10px;
-    max-width: 400px;
-    margin-top: 40px;
-    color: #8a3b47
+  padding: 10px;
+  max-width: 400px;
+  margin-top: 40px;
+  color: #8a3b47;
 }
 
-.assign_tasks > select{
-    padding: 10px 15px;
-    width: 100%;
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    color: #8a3b47;
-    font-weight: 500;
-    background-color: #d66d7d;
-    margin-bottom: 13px;
+.assign_tasks > select {
+  padding: 10px 15px;
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  color: #8a3b47;
+  font-weight: 500;
+  background-color: #d66d7d;
+  margin-bottom: 13px;
 }
-.assign_tasks > h4{
-    text-align: center;
+.assign_tasks > h4 {
+  text-align: center;
 }
 
-.assign_tasks > label{
-    margin-bottom: 1px;
-    font-size: 15px;
+.assign_tasks > label {
+  margin-bottom: 1px;
+  font-size: 15px;
+}
+
+.bigDiv > h3 {
+  color: #222;
 }

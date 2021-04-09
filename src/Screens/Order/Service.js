@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { db } from "../../firebase";
 import "./styles.css";
 import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
 
 function Service({}) {
   const [services, setServices] = useState([]);
@@ -15,18 +16,16 @@ function Service({}) {
 
   const orderService = async (e) => {
     e.preventDefault();
-    var d = new Date();
     const data = {
       cost,
       name: serviceName,
       type: "service",
       customer,
-      date: d,
+      date: moment().format("DD/MM/YYYY"),
       carName,
       model,
       status: "Active",
     };
-    console.log(data);
     await db
       .collection("orders")
       .doc(uuidv4())
