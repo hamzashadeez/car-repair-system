@@ -71,10 +71,7 @@ function Inventory() {
           }))
         );
       });
-      // console.log(products);
     })();
-
-    // questions.map((d) => console.log(d));
   }, []);
 
   const addCategory = async (e) => {

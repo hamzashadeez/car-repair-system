@@ -68,14 +68,14 @@ const Others = () =>{
 function App() {
   const [state, setState] = useContext(UserContext)
   // const user = localStorage.getItem("userAuth");
-  if (state.name === "mr admin") {
+  if (state.name === "admin") {
     return (
       <Router>
         <Main />
       </Router>
     );
   } 
-  if (state.name !== "mr admin" && state.name !== "") {
+  if (state.name !== "admin" && state.name !== "") {
     return(
       <Router>
         <Others />
