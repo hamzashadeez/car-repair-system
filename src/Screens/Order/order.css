@@ -1,0 +1,45 @@
+.orderDetail_main{
+    height: 73vh;
+    display: flex;
+}
+
+.bigDiv{
+    flex: 3
+}
+.smDiv{
+    flex: 1
+}
+
+.assign_tasks{
+    background: linear-gradient(
+    to right top,
+    rgba(255, 255, 255, 0.23),
+    rgba(255, 255, 255, 0.18)
+  );
+  display: flex;
+  flex-direction: column;
+    padding: 10px;
+    max-width: 400px;
+    margin-top: 40px;
+    color: #8a3b47
+}
+
+.assign_tasks > select{
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #8a3b47;
+    font-weight: 500;
+    background-color: #d66d7d;
+    margin-bottom: 13px;
+}
+.assign_tasks > h4{
+    text-align: center;
+}
+
+.assign_tasks > label{
+    margin-bottom: 1px;
+    font-size: 15px;
+}

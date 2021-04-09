@@ -10,7 +10,7 @@ import NewService from "./Modals/NewService";
 const Order = () => {
   const [orderType, setOrderType] = useState("service");
   const [orders, setOrder] = useState([]);
-  const [customers, setCustomers] = useState([]);
+  
   const [customer, setCustomer] = useState({})
 
   //Modals
@@ -29,18 +29,7 @@ const Order = () => {
       });
     })();
   }, []);
-  useEffect(() => {
-    (async () => {
-      db.collection("customers").onSnapshot((snapshot) => {
-        setCustomers(
-          snapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-          }))
-        );
-      });
-    })();
-  }, []);
+  
 
   const handleClose = () => {
     setNewCustomerModal(false);
@@ -61,22 +50,12 @@ const Order = () => {
         show={newServiceModal}
         onHide={() => hideService()}
         hideService={hideService}
-        customer={customer}
       />
       <div className="order__main_div">
         <div className="main_order">
           <form>
             <h2>Add new order</h2>
-            <label>Select Customer</label>
-            <select value={customer} onChange={(e)=>{
-              setCustomer(e.target.value)
-              console.log(customer)
-            }
-              }>
-              {customers.map(({ id, data }) => (
-                <option value={id} key={id}>{data.name}</option>
-              ))}
-            </select>
+           
             <label>Choose Order Type</label>
             <select
               value={orderType}

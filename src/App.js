@@ -20,6 +20,8 @@ import CompletedCars from "./Screens/Cars/CompletedCars";
 import UserDash from "./Users/Dashboard";
 import Item from './Screens/Inventory/Item'
 import Order from './Screens/Order'
+import OrderDetails from './Screens/Order/OrderDetails'
+
 
 //#f7022a
 
@@ -49,6 +51,7 @@ const Main = () => {
           <Route exact path="/logout" component={Logout} />
           <Route exact path="/item" component={Item} />
           <Route exact path="/order" component={Order} />
+          <Route exact path="/orderdetail" component={OrderDetails} />
           
         </Switch>
       </div>

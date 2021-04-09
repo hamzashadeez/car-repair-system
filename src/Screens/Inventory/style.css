@@ -16,7 +16,9 @@
     rgba(255, 255, 255, 0.23),
     rgba(255, 255, 255, 0.18)
   );
+  margin-top: -10px;
   display: flex;
+  height: 73vh;
   flex-direction: column;
 }
 
@@ -183,7 +185,7 @@
     rgba(255, 255, 255, 0.18)
   );
   display: flex;
-  /* align-items: center; */
+  height: 73vh;
   justify-content: center;
   box-sizing: border-box;
 }

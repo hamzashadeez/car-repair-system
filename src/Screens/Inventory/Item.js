@@ -92,29 +92,33 @@ function Item(props) {
         </div>
         <div className="item_configs">
           <form onSubmit={(e) => updateProduct(e)}>
-            <p>Delete or Edit Product Details</p>
+            <p style={{fontWeight: 'bold'}}>Delete or Edit Product Details</p>
+            <label className='labelStyle' style={{marginLeft: "20px"}}>product name</label>
             <input
               value={pName}
               onChange={(e) => setPName(e.target.value)}
               placeholder="Product Name"
               required
             />
+            <label className='labelStyle' style={{marginLeft: "20px"}}>product price</label>
             <input
               value={pPrice}
               onChange={(e) => setPPrice(e.target.value)}
               placeholder="Product Price"
               required
             />
+            <label className='labelStyle' style={{marginLeft: "20px"}}>Number of stock</label>
             <input
               value={pStock}
               onChange={(e) => setPStock(e.target.value)}
               placeholder="Stock"
               required
             />
+            <label className='labelStyle' style={{marginLeft: "20px"}}>categories</label>
             <select
               className="myselect"
               required
-              style={{width: '230px'}}
+              style={{width: '200px'}}
               onChange={(e) => setPCategory(e.target.value)}
             >
               {categoryO.map(({ id, data }) => (
