@@ -1,0 +1,21 @@
+.logOutMech{
+    height: 250px;
+    width: 300px;
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ .logOutMech > p{
+     color: #8a3b47;
+     font-size: 2rem;
+ }
+
+.main_log{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
