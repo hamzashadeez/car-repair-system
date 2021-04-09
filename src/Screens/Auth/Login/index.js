@@ -48,35 +48,15 @@ const Login = () => {
           if (parseInt(code) === parseInt(mech.data.code)) {
             console.log(user, " is logged");
             console.log("logged");
-            setState({ name: user, code });
+            setState({ name: user, code, id : mech.id });
           } else {
              alert("Incorrect Login Credentials"); 
           }
-          // if (parseInt(code) === mech.data.code) {
-          // } else {
-          //   console.log(code);
-          //   console.log(mech.data.code);
-          // }
+     
         }
       });
     }
 
-    // let searchUser = "";
-    // users.map((d) => {
-    //   if (user === d.name.toLowerCase()) {
-    //     searchUser = d;
-    //     setLogged(d);
-    //   }
-    // });
-
-    // if (code === searchUser.code) {
-    //   console.log("you are logged");
-    //   setState({ name: user, code });
-    //   console.log(state);
-    //   //   localStorage.setItem("userAuth", logged);
-    // } else {
-    
-    // }
   };
   return (
     <div className="loginPage">

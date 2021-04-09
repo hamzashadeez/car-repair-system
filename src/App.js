@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useContext} from 'react'
-import {UserContext} from './UserContext'
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useContext } from "react";
+import { UserContext } from "./UserContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import DashBoard from "./Screens/Admin/Dashboard";
@@ -18,11 +18,13 @@ import Login from "./Screens/Auth/Login";
 import NewCar from "./Screens/Cars/NewCar";
 import CompletedCars from "./Screens/Cars/CompletedCars";
 import UserDash from "./Users/Dashboard";
-import Item from './Screens/Inventory/Item'
-import Order from './Screens/Order'
-import OrderDetails from './Screens/Order/OrderDetails'
-
-
+import Item from "./Screens/Inventory/Item";
+import Order from "./Screens/Order";
+import OrderDetails from "./Screens/Order/OrderDetails";
+import Header from './Users/Header'
+import Profile from './Users/Profile'
+import Assignment from './Users/Assignment'
+import LogOutMech from './Users/LogOut'
 //#f7022a
 
 const Main = () => {
@@ -52,24 +54,28 @@ const Main = () => {
           <Route exact path="/item" component={Item} />
           <Route exact path="/order" component={Order} />
           <Route exact path="/orderdetail" component={OrderDetails} />
-          
         </Switch>
       </div>
     </div>
   );
 };
 
-
-const Others = () =>{
-  return(
-    <Switch>
-    <Route exact path="/" component={UserDash} />
-  </Switch>
-  )
-}
+const Others = () => {
+  return (
+    <div className='container'>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={UserDash} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/assignment" component={Assignment} />
+        <Route exact path="/logout" component={LogOutMech} />
+      </Switch>
+    </div>
+  );
+};
 
 function App() {
-  const [state, setState] = useContext(UserContext)
+  const [state, setState] = useContext(UserContext);
   // const user = localStorage.getItem("userAuth");
   if (state.name === "admin") {
     return (
@@ -77,15 +83,14 @@ function App() {
         <Main />
       </Router>
     );
-  } 
+  }
   if (state.name !== "admin" && state.name !== "") {
-    return(
+    return (
       <Router>
         <Others />
       </Router>
-    )
-  }
-  else {
+    );
+  } else {
     return <Login />;
   }
 }

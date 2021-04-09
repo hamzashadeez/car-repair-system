@@ -1,0 +1,15 @@
+.menu__header{
+    padding: 10px 20px;
+    background-color: #8a3b47;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: whitesmoke;
+}

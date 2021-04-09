@@ -1,0 +1,53 @@
+.profile_main{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding:20px 10px;
+    height: 90vh;
+}
+
+.profile_data{
+    background-color: white;
+    padding: 10px;
+    color: #333;
+    border-radius: 5px;
+    min-width: 300px;
+}
+
+.profile_configs{
+    background-color: white;
+    padding: 10px;
+    color: #333;
+    border-radius: 5px;
+    min-width: 300px;
+}
+
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #8a3b47
+}
+
+.iconContainer > i{
+    font-size: 4rem;
+}
+
+.labelsContainer{
+    padding-bottom: 20px;
+}
+.labelsContainer > p{
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.labelsContainer > p > span{
+    color: #8a3b47;
+    font-weight: 600;
+}
+
+
+.btnChange{
+    background-color: #8a3b47;
+}

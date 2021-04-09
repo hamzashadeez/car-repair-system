@@ -1,13 +1,12 @@
 import React from 'react'
 import './style.css'
 
-
-function UserDash() {
+function Assignment() {
     return (
         <div className='screenn'>
-            Mehcan Sers
+            Assignment
         </div>
     )
 }
 
-export default UserDash
+export default Assignment
