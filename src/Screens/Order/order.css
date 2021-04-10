@@ -5,6 +5,7 @@
 
 .bigDiv {
   flex: 3;
+  position: relative;
 }
 
 /* Chat */

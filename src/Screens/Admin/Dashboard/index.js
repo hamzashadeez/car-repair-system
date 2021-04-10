@@ -1,7 +1,8 @@
 import "./styles.css";
-import React, {useRef, useLayoutEffect} from "react";
+import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
+import { db } from "../../../firebase";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 const Box = ({ label, num }) => {
@@ -15,7 +16,7 @@ const Box = ({ label, num }) => {
   );
 };
 
-const Chart =()=>{
+const Chart = () => {
   const chart = useRef(null);
 
   useLayoutEffect(() => {
@@ -28,7 +29,11 @@ const Chart =()=>{
 
     for (let i = 1; i < 366; i++) {
       visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-      data.push({ date: new Date(2018, 0, i), name: "name" + i, value: visits });
+      data.push({
+        date: new Date(2018, 0, i),
+        name: "name" + i,
+        value: visits,
+      });
     }
 
     x.data = data;
@@ -57,25 +62,87 @@ const Chart =()=>{
     };
   }, []);
 
-  return (
-    <div id="chartdiv" style={{ width: "100%", height: "340px" }}></div>
-  );
-}
+  return <div id="chartdiv" style={{ width: "100%", height: "340px" }}></div>;
+};
 
 const DashBoard = () => {
+  const [total, setTotal] = useState(1);
+  const [mechanics, setMechanics] = useState([])
+  const [order, setOrder] = useState([])
+  const [customers, setCustomers] = useState([])
+  
+  useEffect(() => {
+    (async () => {
+      db.collection("money").onSnapshot((snapshot) => {
+        setTotal(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      });
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      await db.collection("mechanics")
+        .onSnapshot((snapshot) => {
+          setMechanics(
+            snapshot.docs.map((doc) => ({
+              id: doc.id,
+              data: doc.data(),
+            }))
+          );
+        })
+        
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      await db.collection("customers")
+        .onSnapshot((snapshot) => {
+          setCustomers(
+            snapshot.docs.map((doc) => ({
+              id: doc.id,
+              data: doc.data(),
+            }))
+          );
+        })
+        
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      db.collection("orders").onSnapshot((snapshot) => {
+        setOrder(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      });
+    })();
+  }, []);
+  
+
   return (
     <div className="dashboard">
-      <h3 style={{ color: "black", marginBottom: '2px', fontWeight: '500' }}>Dashboard</h3>
+      <h3 style={{ color: "black", marginBottom: "2px", fontWeight: "500" }}>
+        Dashboard
+      </h3>
       <div className="boxContainer">
-        <Box num={20} label={"Cars in Operation"} />
-        <Box num={19} label={"Income Generated"} />
-        <Box num={4} label={"Number of Mechanics"} />
-        <Box num={33} label={"Customers"} />
+        <Box num={order.length} label={"Number Of Orders"} />
+        <Box num={`$${total[0]?.data.data}`} label={"Income Generated"} />
+        <Box num={mechanics.length} label={"Number of Mechanics"} />
+        <Box num={customers.length} label={"Customers"} />
       </div>
       <div>
-        <div className='chart__container'>
+        <div className="chart__container">
           {/* Chart container */}
-          <Chart />
+          {/* <Chart /> */}
         </div>
       </div>
     </div>

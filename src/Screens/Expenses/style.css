@@ -24,6 +24,7 @@
   color: #333;
   padding: 20px;
   display: flex;
+  cursor: pointer;
   justify-content: space-between;
 }
 

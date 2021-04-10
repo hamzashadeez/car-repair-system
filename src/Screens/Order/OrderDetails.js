@@ -13,6 +13,15 @@ function OrderDetails(props) {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
 
+  const sendInvoice = async () => {
+    await db.collection('customers').doc(data.customer).get().then((cust)=>{
+      console.log(cust.data())
+      let message = `Hello ${cust.data().name}, we recieved your vehicle ${carName} ${model} for our service, your estimated amount is ${cost}.0, thank you.`;
+      let link = `https://wa.me/${cust.data().phone}/?text=${message}`
+      window.open(link, '_blank');
+    })
+  };
+
   useEffect(() => {
     let unsubscribe;
     if (id) {
@@ -79,9 +88,27 @@ function OrderDetails(props) {
     <div className="screen">
       <div className="orderDetail_main">
         <div className="bigDiv">
+          {carName ? (
+            <button
+              className="btn btn-info"
+              style={{ position: "absolute", right: "10px" }}
+              onClick={() => sendInvoice()}
+            >
+              Send Invoice
+            </button>
+          ) : (
+            ""
+          )}
+          {carName ? (
           <h3>
+            Service: <span style={{ color: "#8a3b47" }}>{name}</span>
+          </h3>
+          ) : (
+            <h3>
             Product Name: <span style={{ color: "#8a3b47" }}>{name}</span>
           </h3>
+          )}
+
           <h3>
             Selling Price: <span style={{ color: "#8a3b47" }}>{cost}</span>
           </h3>
@@ -142,7 +169,8 @@ function OrderDetails(props) {
                 <div className="comments">
                   {comments.map((comment) => (
                     <p key={comment.text}>
-                      <strong>{comment.username}</strong> <span>{comment.text}</span>
+                      <strong>{comment.username}</strong>{" "}
+                      <span>{comment.text}</span>
                     </p>
                   ))}
                 </div>
