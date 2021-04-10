@@ -26,6 +26,7 @@ import Profile from './Users/Profile'
 import Assignment from './Users/Assignment'
 import LogOutMech from './Users/LogOut'
 import Chat from './Users/Assignment/Chat'
+import Expenses from "./Screens/Expenses";
 //#f7022a
 
 const Main = () => {
@@ -54,6 +55,7 @@ const Main = () => {
           <Route exact path="/logout" component={Logout} />
           <Route exact path="/item" component={Item} />
           <Route exact path="/order" component={Order} />
+          <Route exact path="/expenses" component={Expenses} />
           <Route exact path="/orderdetail" component={OrderDetails} />
         </Switch>
       </div>
