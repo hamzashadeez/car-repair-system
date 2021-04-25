@@ -1,0 +1,17 @@
+.calen{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.Day{
+    padding: 10px;
+    background-color: brown;
+}
+
+.no_schedule{
+    color: brown;
+    margin-top: 100px;
+    text-align: center;
+}
